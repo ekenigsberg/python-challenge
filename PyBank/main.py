@@ -1,8 +1,7 @@
 import os
 import csv
 
-# declare vars: iteration helpers
-fHeader = True
+# declare vars: iteration helper
 fltPrevAmt = 0
 # declare vars: totals
 fltTotalAmt = 0
@@ -50,11 +49,12 @@ with open(strSummOut, 'w', newline='') as txtSummOut:
 		f'Total: ${fltTotalAmt:,.2f}\n' +
 		f'Average  Change: ${fltTotalChg/(intTotalMos - 1):,.2f}\n' +
 		f'Greatest Increase in Profits: {strMaxMo} (${fltMax:,.2f})\n' +
-		f'Greatest Decrease in Profits: {strMinMo} (${fltMin:,.2f})\n')
+		f'Greatest Decrease in Profits: {strMinMo} (${fltMin:,.2f})')
 
 # output the freshly-created text file to screen
-print()
+print() # spacer
 strSummIn = strSummOut
 with open(strSummIn, 'r', newline='\r\n') as txtSummIn:
 	for line in txtSummIn:
 		print(line)
+print() # spacer
